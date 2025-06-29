@@ -60,3 +60,5 @@ console.log(typeof Heros);
 console.log(typeof myObj);
 
 console.log(typeof myfunction);
+
+
