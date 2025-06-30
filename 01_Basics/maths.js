@@ -22,20 +22,26 @@ console.log(hundreds.toLocaleString('en-In'));
 
 // _______ Maths _______
 
-console.log(Math);
+//console.log(Math);
 
-console.log(Math.abs(-4)); // absoulte math function convert negative number into positive
+//console.log(Math.abs(-4)); // absoulte math function convert negative number into positive
 
-console.log(Math.round(4.6));
-console.log(Math.ceil(4,2)); // uper wali value le ga
+//console.log(Math.round(4.6));
+//console.log(Math.ceil(4,2)); // uper wali value le ga
 
-console.log(Math.floor(4,7));
+//console.log(Math.floor(4,7));
 
-console.log(Math.sqrt(5));
+//console.log(Math.sqrt(5));
 
-console.log(Math.min(4,322,2,1)); // find min value
+//console.log(Math.min(4,322,2,1)); // find min value
 
-console.log(Math.max(22,34,12)); // find max value 
+//console.log(Math.max(22,34,12)); // find max value 
 
+console.log(Math.random());
+console.log((Math.random()*10) + 1);
+console.log((Math.random()*10) + 1);
 
+const min = 10;
+const max = 20;
 
+console.log(Math.floor(Math.random() *(max - min + 1) + min));
