@@ -43,8 +43,36 @@ function loginUserMessage(userName = "Sam") // we can also pass our default valu
 
   // print krwane keliye variable mein store kiya
 
-
-
 //let user =  loginUserMessage(" ") jb kuch bhi pass ni krte to = undefined ata ha
 
+function calculateCarPrice(val1 , val2,...num1) // ... ko rest operater bhi bolte hain or spread bhi based on use case
+{
+    return num1;   // ... mujhe bundle de rha ha sub prices ka in array
+}
 
+console.log(calculateCarPrice(200, 300 , 500,600)); // pehle or dosri val1 or val2 le gaya or baki jo ha wo rest bundle le gaya
+
+
+// Object ko kis tarah pass krte hain in function
+
+const User = {
+    userName: "AHMAD",
+    age: 21
+};
+
+function handleObject(anyobject)
+{
+   console.log(`User Name is ${anyobject.userName} and age is ${anyobject.age}`);
+   
+}
+
+handleObject(User);
+
+const MynewArray = [200,300,400]
+
+function returnSecondValue(getArray)
+{
+   return getArray[1];
+}
+
+console.log(returnSecondValue(MynewArray));
