@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <h1>Heading</h1>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+
+    </div>
+
+    <div class="Box">Box 1</div>
+    <div class="Box">Box 2</div>
+    <div class="Box">Box 3</div>
+
+    
+    <ul>
+        <li class="1">1</li>
+        <li class="2">2</li>
+        <li class="3">3</li>
+        <li class="4">4</li>
+    </ul>
+
+
+    <div id="container2">
+
+    </div>
+
+    <script>
+    
+    // DOM => Document Object Model.
+
+// Is used to make changes add or select an element dynamically on web interface 
+// It can change your html css by selecting their respective IDS OR CLASSES
+
+// Your Html is like a tree so DOM can access this tree to make the changes
+
+// Node list or array different hain
+
+    
+   // Create new element in dom
+
+  const newDiv =  document.createElement('div');
+
+ // newDiv.textContent = 'I am a new Div created Dynamilcaly'
+
+  newDiv.className = 'class-one';
+
+  // Now Append the child so that the dom visible on web page
+
+  document.body.appendChild(newDiv);
+
+  // We can Also select the parent element and check whats in it
+
+  const parent = document.getElementById('container');
+
+
+  // or 
+
+  //const parent1 = document.querySelector('#container');
+
+  // Inside text ko kis tarah dekhna ha 
+
+  console.log(parent.textContent);
+
+  console.log(parent.innerHTML);
+  
+
+  const query = document.querySelector('.Box');
+  query.textContent;
+
+
+  const query2 = document.querySelectorAll('.Box');
+  
+//  query2.forEach((item) => {
+ //   alert(item.textContent);
+ // })
+
+  // Difference simple ha all or simple query selecter ke ander like 
+
+  // query selecter all node list return kre ga jb ke query selecter sirf first element of same name class
+  
+
+    
+    const para1 = document.createElement('p');
+    para1.textContent = 'asgfasgasgasgsad';
+
+    para1.style.color = 'red';
+
+    // Ab ye child bna to liya ha iss ko kis ka child bnna ha kis parent ka 
+
+    const newPara = document.getElementById('container2');
+    newPara.appendChild(para1);
+   
+    const newDiv = createElement('div');
+    const newNode = document.createTextNode = 'Hell its text node';
+    newDiv.appendChild(newNode);
+
+    document.body.appendChild(newDiv)
+
+
+    </script>
+
+    
+</body>
+</html>
