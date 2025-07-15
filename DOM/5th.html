@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <div class="Parent">
+
+        <div>
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thursday</div>
+        </div>
+
+    </div>
+
+    <script>
+    
+   const parent =  document.querySelector('.Parent');
+
+   console.log(parent);
+   console.log(parent.children);
+   console.log(parent.children[1].innerHTML);
+
+  // for (let index = 0; index < parent.children; index++) {
+    //const element = parent.children[i].innerHTML;
+    //console.log(element);
+    
+  // }
+
+   parent.children[i].style.color = 'orange'
+
+   console.log(parent.firstElementChild);
+
+   console.log(parent.lastElementChild);
+   
+   
+  const day =  document.querySelector('.day');
+
+  console.log(day);
+
+  console.log(day.parentElement);
+
+  console.log(day.nextElementSibling);
+
+  console.log('Nodes',parent.childNodes);
+  
+  
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipultaion</title>
+</head>
+<body>
+
+    <script>
+
+      
+    const element = document.createElement('h1');
+
+    element.className = 'Main';
+
+    element.id = Math.round(Math.random() * 10 + 1);
+    
+    element.setAttribute('title','Generative Ai');
+
+    element.style.backgroundColor = 'green';
+
+    element.style.padding = '15px';
+
+    element.style.color = 'white';
+
+    element.innerText = 'chai aur code'; // lakin ye optimized tariqa nhi ha
+
+    const text = document.createTextNode('Chai aur pany');
+
+    element.appendChild(text); // now attach the text node child to its h1 parent
+
+    // now we also show the chagnes on web page
+
+    // so
+
+    document.body.appendChild(element);
+
+
+
+
+    </script>
+    
+</body>
+</html>
