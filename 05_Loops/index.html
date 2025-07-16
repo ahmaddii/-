@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Vanta Globe & Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: 'Segoe UI', sans-serif; color: #f0f0f0; overflow-x: hidden; scroll-behavior: smooth; }
+    #vanta-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; }
+
+    /* Navbar */
+    nav { position: fixed; top: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(0,0,0,0.6); z-index: 10; }
+    .logo { font-size: 1.6rem; font-weight: bold; color: #58a6ff; position: relative; }
+    .logo img { width: 40px; vertical-align: middle; }
+    .logo-text { display: inline-block; margin-left: 0.5rem; }
+    .logo-char { position: absolute; top: -20px; left: 10px; width: 40px; animation: hang 2s infinite ease-in-out; }
+    @keyframes hang { 0%,100% {transform: rotate(-5deg);} 50% {transform: rotate(5deg);} }
+
+    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+    .nav-links a { text-decoration: none; color: #f0f0f0; transition: color .3s; }
+    .nav-links a:hover { color: #58a6ff; }
+
+    .nav-right { display: flex; gap: 1rem; }
+    .btn, .nav-right a { padding: .4rem 1rem; border: 1px solid #58a6ff; background: transparent; color: #58a6ff; border-radius: 4px; cursor: pointer; transition: .3s; text-decoration: none; line-height: 1.5; }
+    .btn:hover, .nav-right a:hover { background: #58a6ff; color: #000; }
+
+    section { padding: 100px 20px; min-height: 100vh; }
+    .content-center { display:flex; align-items:center; justify-content:center; text-align:center; }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; }
+    .proj-card { background: rgba(255,255,255,0.1); padding:1rem; border-radius:8px; transition: transform .3s; }
+    .proj-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.15); }
+
+    /* Skills */
+    .skills { max-width:600px; margin:auto; }
+    .skill { margin-bottom:1.2rem; }
+    .skill-name { margin-bottom: .3rem; }
+    .bar { background: rgba(255,255,255,0.1); border-radius:6px; overflow:hidden; }
+    .progress { height:12px; width:0; background:#58a6ff; transition: width 1.5s; }
+    
+    /* Footer */
+    footer { text-align:center; padding:2rem; background: rgba(0,0,0,0.7); }
+    footer a { color:#58a6ff; margin: 0 .5rem; text-decoration:none; font-size:1.2rem; }
+    footer a:hover { color:#fff; }
+
+    /* Appear animation */
+    .fade-in { opacity:0; transform: translateY(20px); transition: all .8s ease-out; }
+    .fade-in.visible { opacity:1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <div id="vanta-bg"></div>
+
+  <nav>
+    <div class="logo">
+      <img src="https://i.imgur.com/4AiXzf8.png" alt="char" class="logo-char" />
+      <span class="logo-text">YourName</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#login">Login</a>
+      <a href="#signup" class="btn">Sign Up</a>
+    </div>
+  </nav>
+
+  <section id="home" class="content-center">
+    <div class="fade-in"><h1>Hey, I’m YourName</h1><p>Web Developer & Designer</p></div>
+  </section>
+
+  <section id="projects">
+    <h2 class="fade-in">Projects</h2>
+    <div class="projects">
+      <div class="proj-card fade-in"><h3>Project One</h3><p>A cool web app.</p></div>
+      <div class="proj-card fade-in"><h3>Project Two</h3><p>A portfolio site.</p></div>
+      <div class="proj-card fade-in"><h3>Project Three</h3><p>A Vanta integration.</p></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="fade-in">Skills & Languages</h2>
+    <div class="skills">
+      <div class="skill fade-in"><div class="skill-name">HTML & CSS</div><div class="bar"><div class="progress" data-progress="90%"></div></div></div>
+      <div class="skill fade-in"><div class="skill-name">JavaScript</div><div class="bar"><div class="progress" data-progress="85%"></div></div></div>
+      <div class="skill fade-in"><div class="skill-name">React</div><div class="bar"><div class="progress" data-progress="80%"></div></div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="content-center fade-in">
+    <h2>Get In Touch</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>Follow me:</p>
+    <a href="#">🐦 Twitter</a> | <a href="#">📘 LinkedIn</a> | <a href="#">📸 Instagram</a>
+    <p>&copy; 2025 YourName</p>
+  </footer>
+
+  <script>
+    // Vanta init
+    VANTA.GLOBE({ el: "#vanta-bg", mouseControls: true, touchControls: true, gyroControls: false, scale:1.00, scaleMobile:1.00, color:0x0077ff, color2:0xffffff, backgroundColor:0x000000 });
+
+    // Fade-in & progress bar animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const skills = document.querySelectorAll('.progress');
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('progress')) {
+            entry.target.style.width = entry.target.dataset.progress;
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => appearOnScroll.observe(el));
+    skills.forEach(bar => appearOnScroll.observe(bar));
+  </script>
+</body>
+</html>
