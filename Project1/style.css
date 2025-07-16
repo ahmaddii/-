@@ -1,0 +1,38 @@
+html {
+    margin: 0;
+}
+
+span {
+    display: block;
+}
+
+.button{
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgb(18, 18, 18);
+    display: inline-block;
+}
+
+.Canvas{
+    width: 80%;
+    margin: 100px auto 100px;
+    text-align: center;
+}
+
+#grey{
+    background-color: grey;
+}
+
+#white{
+    background-color: white;
+}
+
+#red{
+  background-color: red;
+}
+
+#green{
+
+    background-color: green;
+
+}
