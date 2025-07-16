@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <ul class="language">
+
+        <li>Javascript</li>
+
+    </ul>
+
+    
+</body>
+
+<script>
+    
+    function addListing(langName) {
+
+       const lit = document.createElement('li');
+       lit.innerHTML = `${langName}`;
+       document.querySelector('.language').appendChild(lit); /// Traverse hota har bar ager 1 lakh apne functions se value pass ki  vo to time lega
+       
+    }
+
+    function SendFunction(langName){
+
+      const li =  document.createElement('li');
+
+      li.appendChild(document.createTextNode(langName)); // Optimized Approch
+
+      document.querySelector('.language').appendChild(li);
+
+    }
+
+    addListing('Java');
+
+    addListing('Python')
+
+
+    // Edit
+
+   const liii = document.querySelector('li:nth-child(2)');
+
+   const element = document.createElement('li');
+
+   element.appendChild(document.createTextNode('Mojo Zinda Ha'));
+
+   liii.replaceWith(element); // Ye replace kre ga kunke hamain pta ha refrrence hum ne second wale child ka diya ha to us ko replace kre ga
+
+  
+   const child = document.querySelector('li:nth-child(1)');
+
+   child.outerHTML = '<li>Typescript</li>'
+
+   const remove = document.querySelector('li:last-child');
+
+   remove.remove();
+
+   const FirstElement = document.querySelector('li:first-child');
+
+   FirstElement.remove();
+
+
+
+</script>
+
+
+
+</html>
