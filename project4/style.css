@@ -1,0 +1,55 @@
+.container{
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+#guessInput{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;    
+    border-radius: 10px;
+
+}
+
+#checkButton{
+     
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(247, 162, 4);
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+
+
+
+}
+
+#checkButton:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#checkButton:active{
+
+    transform: scale(0.9);
+}
