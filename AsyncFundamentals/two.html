@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Chai Aur Code</h1>
+
+    <button id="Stop">Stop</button>
+    
+</body>
+
+<script>
+
+const sayHi = function(){
+    console.log('Ahmad');
+   }
+   
+  const changeText = function()
+  {
+    document.querySelector('h1').innerHTML = 'Best Js Series';
+  }
+
+  const changeMe = setTimeout(changeText,2000)
+ 
+   setTimeout(sayHi,2000); // Reference dena handeler
+
+  // setTimeout(function(){
+   // console.log('Ahmad');
+   //},2000);
+
+  // clearTimeout(changeMe);
+
+   document.querySelector('#Stop').addEventListener('click',function(){
+    console.log('Stop');
+    clearTimeout(changeMe);
+   })
+
+
+</script>
+
+
+</html>

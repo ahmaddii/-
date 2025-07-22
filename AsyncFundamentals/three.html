@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Chai Aur Javascript</h1>
+
+    <button id="Start">Start</button>
+
+    <button id="Stop">Stop</button>
+    
+</body>
+
+<script>
+
+    let sayHi;
+
+  const sayDate =  function(str){
+         console.log(str,Date.now()); 
+    }
+
+   // Reference pass krdiya 
+
+ //  const sayHi = setInterval(sayDate,1000,'Third Parameter') // 3rd parameter bhi hota 
+
+  // clearInterval(sayHi);
+
+   document.querySelector('#Stop').addEventListener('click',function(){
+    clearInterval(sayHi); // Id Reference pass krna ha jis interval ko clear krwa rahe hain
+   })
+
+   document.querySelector('#Start').addEventListener('click',function(){
+     sayHi = setInterval(sayDate,1000,'Third Parameter')
+   })
+ 
+
+</script>
+
+
+</html>
