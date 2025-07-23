@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+const requestUrl = 'https://api.github.com/users/ahmadiii';
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET',requestUrl);
+
+xhr.onreadystatechange = function() // us ka tack bhi rakhna
+{
+console.log(xhr.readyState);
+
+if(xhr.readyState === 4)
+{   
+    const data = JSON.parse(this.responseText);
+    console.log(typeof data); // oho data string mein arha so is ko pehle json mein convert krna hoga
+    
+    console.log(data.id); // current context per this laga jata 
+    
+}
+
+}
+
+// console log is basically a powerfull tool for debug which is a part of v8 engine in which js is created
+// v8 engine created using cpp so js is the wrapper on v8 engine v8 is open source js engine in which you can contribute
+
+xhr.send(); // ab call hoga open
+
+</script>
+
+</html>
