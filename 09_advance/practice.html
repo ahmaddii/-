@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+   const url = 'https://api.github.com/users/ahmadiii';
+   
+   const xhr = new XMLHttpRequest(); // Built in Js Object to make http request like get post
+
+   xhr.open('GET',url); // Method konsa lagan ha or sting url dena ha api ka
+
+   xhr.onreadystatechange = function() // trach rakhna ha kaha per order poncha ya state
+   {
+    console.log(xhr.readyState);
+
+    if(xhr.readyState === 4)
+   {
+   const data = JSON.parse(this.responseText);
+
+   console.log(data.id);
+     
+   }
+    
+   }
+
+   xhr.send();
+
+
+ //  Step	What's Happening
+//📦 xhr.open()	You choose the product and website
+//📤 xhr.send()	You place the order
+//🔁 onreadystatechange	You track your delivery step-by-step
+//✅ readyState === 4	Your package arrives
+//🔍 responseText + JSON.parse()	You open the box and use the product (data)
+
+
+</script>
+
+</html>
