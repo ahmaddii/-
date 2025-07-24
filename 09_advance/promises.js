@@ -1,5 +1,3 @@
-
-
 const promiseOne = new Promise(function(resolve,reject) {
     // Do an Async Task
     // DB Calls , cryptography,networkcalls
@@ -70,7 +68,7 @@ promiseFour.then((user) => {
 })
 
 
-promiseFive = new Promise(function(resolve,reject){
+const promiseFive = new Promise(function(resolve,reject){
 
     setTimeout(function(){
 
